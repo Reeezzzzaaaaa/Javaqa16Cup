@@ -2,10 +2,12 @@ package ru.netology.javaqa.game;
 import ru.netology.javaqa.player.Player;
 import ru.netology.javaqa.exception.NotRegisteredException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Game {
 
     private final ArrayList<Player> playersList = new ArrayList<>();
+    private HashMap<String, String> map = new HashMap<>();
 
     public Game() {
     }
@@ -54,5 +56,18 @@ public class Game {
         } else {
             return false;
         }
+    }
+
+    public void addMap(Player player) {
+        map.put(player.getPlayerName(), player.getSkill());
+    }
+
+    public String infoAboutOfPlayer(Player player) {
+
+        String info = null;
+        for (String playerName : map.keySet()) {
+            info = map.get(player.getPlayerName());
+        }
+        return info;
     }
 }

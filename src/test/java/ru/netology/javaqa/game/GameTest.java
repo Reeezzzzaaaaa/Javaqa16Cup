@@ -1,9 +1,12 @@
 package ru.netology.javaqa.game;
+import org.junit.jupiter.api.Assertions;
 import ru.netology.javaqa.player.Player;
 import ru.netology.javaqa.exception.NotRegisteredException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -12,16 +15,18 @@ public class GameTest {
 
     Game game = new Game();
 
-    Player player1 = new Player(1, "Slava", 100);
-    Player player2 = new Player(2, "Petya", 10);
-    Player player3 = new Player(3, "Dima", 70);
-    Player player4 = new Player(4, "Olya", 80);
-    Player player5 = new Player(5, "Sveta", 70);
-    Player player6 = new Player(6, "Vika", 50);
-    Player player7 = new Player(7, "Artem", 60);
-    Player player8 = new Player(8, "Gora", 20);
-    Player player9 = new Player(9, "Anya", 40);
-    Player player10 = new Player(10, "Kolya", 90);
+    Player player1 = new Player(1, "Slava", 100, "Мастер");
+    Player player2 = new Player(2, "Petya", 10, "Новичек");
+    Player player3 = new Player(3, "Dima", 70, "Средний");
+    Player player4 = new Player(4, "Olya", 80, "Высокий");
+    Player player5 = new Player(5, "Sveta", 70, "Средний");
+    Player player6 = new Player(6, "Vika", 50, "Средний");
+    Player player7 = new Player(7, "Artem", 60, "Средний");
+    Player player8 = new Player(8, "Gora", 20, "Новичек");
+    Player player9 = new Player(9, "Anya", 40, "Новичек");
+    Player player10 = new Player(10, "Kolya", 90, "Высокий");
+
+    HashMap<String, String> map = new HashMap<>();
 
     @BeforeEach
     public void registered() {
@@ -86,4 +91,23 @@ public class GameTest {
         assertThrows(NotRegisteredException.class, () -> game.round(player6, player10));
     }
 
+    @Test
+    public void mapInfoTest() {
+
+        game.addMap(player1);
+        game.addMap(player2);
+        game.addMap(player3);
+        game.addMap(player4);
+        game.addMap(player5);
+        game.addMap(player6);
+        game.addMap(player7);
+        game.addMap(player8);
+        game.addMap(player9);
+        game.addMap(player10);
+
+        String[] expected = {"Средний"};
+        String[] actual = {game.infoAboutOfPlayer(player5)};
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }

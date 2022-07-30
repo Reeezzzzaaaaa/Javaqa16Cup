@@ -1,4 +1,4 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-javaqamvn,default,Player,0,18,0,0,0,7,0,3,0,3
-javaqamvn,default,Game,0,90,0,16,0,26,0,13,0,5
-javaqamvn,default,NotRegisteredException,0,4,0,0,0,1,0,1,0,1
+javaqamvn,ru.netology.javaqa.game,Game,0,128,0,18,0,34,0,16,0,7
+javaqamvn,ru.netology.javaqa.player,Player,0,24,0,0,0,9,0,4,0,4
+javaqamvn,ru.netology.javaqa.exception,NotRegisteredException,0,4,0,0,0,1,0,1,0,1
