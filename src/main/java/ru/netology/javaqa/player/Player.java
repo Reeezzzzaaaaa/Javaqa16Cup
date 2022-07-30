@@ -1,3 +1,5 @@
+package ru.netology.javaqa.player;
+
 public class Player {
 
     private final int playerId;

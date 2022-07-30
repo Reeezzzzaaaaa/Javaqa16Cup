@@ -1,3 +1,7 @@
+package ru.netology.javaqa.game;
+import ru.netology.javaqa.player.Player;
+import ru.netology.javaqa.exception.NotRegisteredException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

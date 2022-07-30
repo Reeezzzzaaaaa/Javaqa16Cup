@@ -1,3 +1,6 @@
+package ru.netology.javaqa.game;
+import ru.netology.javaqa.player.Player;
+import ru.netology.javaqa.exception.NotRegisteredException;
 import java.util.ArrayList;
 
 public class Game {
