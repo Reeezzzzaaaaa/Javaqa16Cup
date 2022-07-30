@@ -26,8 +26,6 @@ public class GameTest {
     Player player9 = new Player(9, "Anya", 40, "Новичек");
     Player player10 = new Player(10, "Kolya", 90, "Высокий");
 
-    HashMap<String, String> map = new HashMap<>();
-
     @BeforeEach
     public void registered() {
         game.register(player1);
